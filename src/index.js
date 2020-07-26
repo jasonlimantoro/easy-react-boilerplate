@@ -12,6 +12,7 @@ const copyTemplate = (answers) => {
 		fs.mkdirsSync(appDir);
 	}
 	console.log("copying from", templateDir, "to", appDir);
+	console.log(fs.readdirSync(templateDir));
 	fs.copySync(templateDir, appDir, {
 		filter: function (src) {
 			console.log(src);
