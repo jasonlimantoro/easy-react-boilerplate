@@ -7,7 +7,7 @@ const templatesDir = path.join(__dirname, "../templates");
 
 const copyTemplate = (answers) => {
 	const templateDir = `${templatesDir}/${answers.template}`;
-	const appDir = `${process.cwd()}/${answers.appName}`;
+	const appDir = path.join(process.cwd(), answers.template);
 	if (!fs.existsSync(appDir)) {
 		fs.mkdirsSync(appDir);
 	}
@@ -16,6 +16,7 @@ const copyTemplate = (answers) => {
 			return !/(node_modules|dist)/.test(src);
 		},
 	});
+	return appDir;
 };
 
 inquirer
@@ -34,7 +35,7 @@ inquirer
 		},
 	])
 	.then((answers) => {
-		copyTemplate(answers);
-		console.log("Copied to", answers.appName, "directory!");
+		const resultDir = copyTemplate(answers);
+		console.log("Copied to", resultDir, "!");
 		console.log("Done.");
 	});
