@@ -11,6 +11,7 @@ const copyTemplate = (answers) => {
 	if (!fs.existsSync(appDir)) {
 		fs.mkdirsSync(appDir);
 	}
+	console.log("copying from", templateDir, "to", appDir);
 	fs.copySync(templateDir, appDir, {
 		filter: function (src) {
 			console.log(src);
