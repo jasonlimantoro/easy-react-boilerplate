@@ -8,9 +8,9 @@ const templatesDir = path.join(__dirname, "../templates");
 const copyTemplate = (answers) => {
 	const templateDir = `${templatesDir}/${answers.template}`;
 	if (!fs.existsSync(answers.appName)) {
-		fs.mkdirsSync(answers.appName);
+		fs.mkdirsSync(path.join(__dirname, answers.appName));
 	}
-	fs.copySync(templateDir, answers.appName, {
+	fs.copySync(templateDir, path.join(__dirname, answers.appName), {
 		filter: function (src) {
 			return !/(node_modules|dist)/.test(src);
 		},
