@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render without crashing 1`] = `
+.c0:hover {
+  --text-opacity: 1;
+  color: rgba(252,129,129,var(--text-opacity));
+}
+
+<div>
+  <div>
+    <h1>
+      Your most simple react app
+    </h1>
+    <div>
+      <p>
+        0
+      </p>
+      <button
+        class="c0 btn btn-gray"
+      >
+        +
+      </button>
+      <button
+        class="c0 btn btn-gray"
+      >
+        -
+      </button>
+    </div>
+  </div>
+</div>
+`;

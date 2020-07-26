@@ -1,0 +1,9 @@
+node_modules
+build
+dist
+*.log
+stylesheet/tailwind.css
+.yalc
+yalc.lock
+*.env
+.DS_store
