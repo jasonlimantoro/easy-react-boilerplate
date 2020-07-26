@@ -7,10 +7,11 @@ const templatesDir = path.join(__dirname, "../templates");
 
 const copyTemplate = (answers) => {
 	const templateDir = `${templatesDir}/${answers.template}`;
-	if (!fs.existsSync(answers.appName)) {
-		fs.mkdirsSync(path.join(__dirname, answers.appName));
+	const appDir = `${process.cwd()}/${answers.appName}`;
+	if (!fs.existsSync(appDir)) {
+		fs.mkdirsSync(appDir);
 	}
-	fs.copySync(templateDir, path.join(__dirname, answers.appName), {
+	fs.copySync(templateDir, appDir, {
 		filter: function (src) {
 			return !/(node_modules|dist)/.test(src);
 		},
