@@ -13,6 +13,7 @@ const copyTemplate = (answers) => {
 	}
 	fs.copySync(templateDir, appDir, {
 		filter: function (src) {
+			console.log(src);
 			return !/(node_modules|dist)/.test(src);
 		},
 	});
