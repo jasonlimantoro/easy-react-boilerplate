@@ -13,9 +13,9 @@
   },
   "homepage": "https://github.com/jasonlimantoro/easy-react-boilerplate",
   "dependencies": {
-    "copy-dir": "^1.3.0",
     "fs-extra": "^9.0.1",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "ncp": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^7.5.0"

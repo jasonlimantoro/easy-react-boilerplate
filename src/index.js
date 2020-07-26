@@ -2,21 +2,28 @@
 const inquirer = require("inquirer");
 const fs = require("fs-extra");
 const path = require("path");
-const copyDir = require("copy-dir");
+const { ncp } = require("ncp");
+
+const promiseCopy = (...args) => {
+	return new Promise((resolve, reject) => {
+		ncp(...args, (err) => {
+			if (err) reject(err);
+			resolve();
+		});
+	});
+};
 
 const templatesDir = path.join(__dirname, "../templates");
 
-const copyTemplate = (answers) => {
+const copyTemplate = async (answers) => {
 	const templateDir = `${templatesDir}/${answers.template}`;
 	const appDir = path.join(process.cwd(), answers.appName);
 	if (!fs.existsSync(appDir)) {
 		fs.mkdirsSync(appDir);
 	}
 	console.log(fs.readdirSync(templateDir));
-	copyDir.sync(templateDir, appDir, {
-		mode: true, // keep file mode
-		cover: true, // cover file when exists, default is true
-		filter: function (_, filepath) {
+	await promiseCopy(templateDir, appDir, {
+		filter: function (filepath) {
 			if (/(node_modules|dist)/.test(filepath)) {
 				return false;
 			}
@@ -41,8 +48,8 @@ inquirer
 			message: "Are you sure?",
 		},
 	])
-	.then((answers) => {
-		const resultDir = copyTemplate(answers);
+	.then(async (answers) => {
+		const resultDir = await copyTemplate(answers);
 		console.log("Copied to", resultDir, "!");
 		console.log("Done.");
 	});
