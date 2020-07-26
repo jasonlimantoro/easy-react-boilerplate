@@ -7,7 +7,7 @@ const templatesDir = path.join(__dirname, "../templates");
 
 const copyTemplate = (answers) => {
 	const templateDir = `${templatesDir}/${answers.template}`;
-	const appDir = path.join(process.cwd(), answers.template);
+	const appDir = path.join(process.cwd(), answers.appName);
 	if (!fs.existsSync(appDir)) {
 		fs.mkdirsSync(appDir);
 	}
