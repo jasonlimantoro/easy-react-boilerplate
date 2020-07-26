@@ -2,5 +2,12 @@
   "name": "easy-react-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0"
+  }
 }
