@@ -3,6 +3,9 @@
   "version": "1.0.6",
   "bin": "src/index.js",
   "main": "src/index.js",
+  "files": [
+    "templates/**"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
