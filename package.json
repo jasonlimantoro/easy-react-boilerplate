@@ -4,6 +4,11 @@
   "bin": "src/index.js",
   "main": "src/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonlimantoro/easy-react-boilerplate"
+  },
+  "homepage": "https://github.com/jasonlimantoro/easy-react-boilerplate",
   "dependencies": {
     "fs-extra": "^9.0.1",
     "inquirer": "^7.3.3"
