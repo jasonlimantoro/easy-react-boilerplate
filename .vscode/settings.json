@@ -1,3 +1,6 @@
 {
-	"eslint.workingDirectories": ["./templates/react-ts-tailwind-sc"]
+	"eslint.workingDirectories": [
+		"./templates/react-ts-tailwind-sc",
+		"./templates/express-typescript"
+	]
 }
