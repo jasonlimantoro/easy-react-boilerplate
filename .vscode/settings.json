@@ -1,0 +1,3 @@
+{
+	"eslint.workingDirectories": ["./templates/react-ts-tailwind-sc"]
+}
