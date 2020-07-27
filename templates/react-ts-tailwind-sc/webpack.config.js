@@ -1,5 +1,5 @@
 const common = require("./webpack/webpack.common");
-const webpackMerge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 
 const env = process.env.NODE_ENV || "dev";
 const envToFilePrefix = {
@@ -8,5 +8,5 @@ const envToFilePrefix = {
 };
 const specific = require(`./webpack/webpack.${envToFilePrefix[env]}.js`);
 
-const config = webpackMerge(common, specific);
+const config = merge(common, specific);
 module.exports = config;
