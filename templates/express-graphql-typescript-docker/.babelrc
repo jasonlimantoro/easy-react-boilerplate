@@ -1,0 +1,31 @@
+{
+	"presets": [
+		"@babel/preset-typescript",
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"esmodules": true
+				}
+			}
+		]
+	],
+	"plugins": [
+		"inline-dotenv",
+		"@babel/plugin-transform-runtime",
+		"babel-plugin-transform-typescript-metadata",
+		["@babel/plugin-proposal-decorators", { "legacy": true }],
+		["@babel/plugin-proposal-class-properties", { "loose": true }],
+		"@babel/plugin-transform-object-assign",
+		"@babel/plugin-proposal-object-rest-spread",
+		[
+			"module-resolver",
+			{
+				"root": ["./src"],
+				"alias": {
+					"^@app/(.*)": "./src/\\1"
+				}
+			}
+		]
+	]
+}

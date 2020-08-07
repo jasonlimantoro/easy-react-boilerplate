@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  backend:
+    container_name: backend-dev
+    build:
+      target: base
+    volumes:
+      - ./package.json:/app/code/package.json
+      - ./src/:/app/code/src/
+      - ./test:/app/code/test/
+      - ./tsconfig.json:/app/code/tsconfig.json
+      - ./jest.config.js:/app/code/jest.config.js
+      - ./ormconfig.js:/app/code/ormconfig.js

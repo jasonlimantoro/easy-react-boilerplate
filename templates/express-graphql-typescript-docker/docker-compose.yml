@@ -1,0 +1,43 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/Dockerfile
+    tty: true
+    stdin_open: true
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: 4000
+      SESSION_SECRET: abcde
+      REDIS_URL: redis://redis
+      DATABASE_URL: mysql://user:user@db:3306/db_example
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: mysql/mysql-server:5.7
+    restart: always
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_DATABASE: "db_example"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "user"
+      MYSQL_ROOT_PASSWORD: "root"
+    volumes:
+      - db-volume:/var/lib/mysql
+      - ./docker/db/init:/docker-entrypoint-initdb.d
+
+  redis:
+    image: redis:6.0-alpine
+    ports:
+      - "6381:6379"
+    volumes:
+      - cache-volume:/data
+
+volumes:
+  db-volume:
+  cache-volume:
