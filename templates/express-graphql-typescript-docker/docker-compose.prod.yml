@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  ewsales_be:
-    container_name: ewsales_be-prod
+  backend:
+    container_name: backend-prod
     build:
       target: prod
