@@ -10,7 +10,8 @@
     "prebuild": "cross-env NODE_ENV=production yarn run build:style",
     "build:style": "postcss stylesheet/index.css -o stylesheet/tailwind.css",
     "watch:style": "yarn build:style --watch",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "husky install"
   },
   "husky": {
     "hooks": {
@@ -58,7 +59,7 @@
     "eslint-plugin-react": "^7.20.4",
     "eslint-plugin-react-hooks": "^4.0.8",
     "html-webpack-plugin": "^4.2.0",
-    "husky": "^4.2.5",
+    "husky": "^5.1.1",
     "jest": "^26.1.0",
     "jest-styled-components": "^7.0.2",
     "lint-staged": "^10.1.3",
