@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
 const path = require("./path");
 
+const isDevelopment = process.env.NODE_ENV !== "production";
+
 module.exports = {
   entry: {
     app: path.entryFile,
@@ -34,6 +36,11 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
+            options: {
+              plugins: [
+                isDevelopment && require.resolve("react-refresh/babel"),
+              ].filter(Boolean),
+            },
           },
         ],
       },

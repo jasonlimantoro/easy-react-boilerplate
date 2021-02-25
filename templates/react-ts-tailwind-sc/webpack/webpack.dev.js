@@ -1,6 +1,7 @@
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 const path = require("./path");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -12,10 +13,12 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       context: ["/api", "/auth"],
-      "target": "http://localhost:4000",
+      target: "http://localhost:4000",
     },
+    hot: true,
   },
   plugins: [
     new BundleAnalyzerPlugin({ analyzerPort: 8888, openAnalyzer: false }),
+    new ReactRefreshWebpackPlugin(),
   ],
 };
