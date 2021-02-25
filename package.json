@@ -6,6 +6,9 @@
   "files": [
     "templates/**"
   ],
+  "scripts": {
+    "release": "np"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,7 +17,8 @@
   "homepage": "https://github.com/jasonlimantoro/easy-react-boilerplate",
   "dependencies": {
     "fs-extra": "^9.0.1",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "np": "^7.4.0"
   },
   "devDependencies": {
     "eslint": "^7.5.0"
