@@ -7,3 +7,11 @@ stylesheet/tailwind.css
 yalc.lock
 *.env
 .DS_store
+
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

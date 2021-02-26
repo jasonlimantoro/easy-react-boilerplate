@@ -4,14 +4,13 @@
   "description": "React boilerplate with typescript, tailwind, and styled components",
   "main": "dist/index.js",
   "scripts": {
-    "start": "npm-run-all --parallel watch:style start:webpack",
+    "start": "npm-run-all --parallel start:webpack",
     "start:webpack": "cross-env NODE_ENV=development webpack-dev-server --open",
     "build": "cross-env NODE_ENV=production webpack",
     "prebuild": "cross-env NODE_ENV=production yarn run build:style",
     "build:style": "postcss stylesheet/index.css -o stylesheet/tailwind.css",
     "watch:style": "yarn build:style --watch",
-    "test": "jest",
-    "postinstall": "husky install"
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -43,7 +42,9 @@
     "@types/styled-components": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
     "@typescript-eslint/parser": "^3.7.0",
+    "autoprefixer": "latest",
     "babel-loader": "^8.1.0",
+    "babel-plugin-macros": "^3.0.1",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^7.0.2",
     "css-loader": "^4.0.0",
@@ -58,7 +59,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.4",
     "eslint-plugin-react-hooks": "^4.0.8",
-    "html-webpack-plugin": "^4.2.0",
+    "html-webpack-plugin": "^5.2.0",
     "husky": "^5.1.1",
     "jest": "^26.1.0",
     "jest-styled-components": "^7.0.2",
@@ -66,8 +67,9 @@
     "mini-css-extract-plugin": "^0.9.0",
     "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss": "latest",
     "postcss-cli": "^7.1.0",
-    "postcss-import": "^12.0.1",
+    "postcss-import": "^14.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.4",
     "react-refresh": "^0.9.0",
@@ -76,7 +78,7 @@
     "terser-webpack-plugin": "^3.0.7",
     "tsconfig-paths-jest": "^0.0.1",
     "typescript": "^3.8.3",
-    "webpack": "^4.42.1",
+    "webpack": "^5.24.2",
     "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
@@ -85,8 +87,9 @@
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "styled-components": "^5.1.1",
-    "tailwindcss": "^1.5.2",
+    "react-is": "^17.0.1",
+    "styled-components": "^5.2.1",
+    "tailwindcss": "^2.0.3",
     "twin.macro": "^1.6.2"
   }
 }
